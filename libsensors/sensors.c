@@ -16,7 +16,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+ /* LOG: 02032013: LOGx swap to RLOGx compat and dissabled. */
 
 #define LOG_TAG "sensors"
 #define SENSORS_SERVICE_NAME "sensors"

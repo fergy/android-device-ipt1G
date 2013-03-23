@@ -25,7 +25,7 @@ BUILD_WITH_ALSA_UTILS := true
 BOARD_USES_LIBSECRIL_STUB := true
 
 # Use the non-open-source parts, if they're present
--include vendor/apple/ipt1G/BoardConfigVendor.mk
+#-include vendor/apple/ipt1G/BoardConfigVendor.mk
 
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -72,15 +72,12 @@ BOARD_USES_GPSWRAPPER := true
 #BOARD_GLOBAL_CFLAGS += -DHAVE_FM_RADIO
 #BOARD_FM_DEVICE :=
 
-# Vibrator
-#BOARD_HAS_VIBRATOR_IMPLEMENTATION := device/apple/ipt1G/vibrator/vibrator.c
-
 #BOARD_NAND_PAGE_SIZE := 4096 -s 128
 #BOARD_NAND_PAGE_SIZE := 4096
 #BOARD_KERNEL_PAGESIZE := 4096
 #BOARD_KERNEL_BASE := 0x40000000
 #BOARD_KERNEL_CMDLINE := console=ttySAC2,115200 consoleblank=0
-#TARGET_PREBUILT_KERNEL := device/apple/ipt1G/kernel
+#TARGET_PREBUILT_KERNEL := device/apple/ipt1G/prebuilt/kernel
 
 #BOARD_BOOTIMAGE_PARTITION_SIZE := 104857600
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 104857600

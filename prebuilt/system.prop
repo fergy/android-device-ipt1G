@@ -3,3 +3,8 @@ android.keychar.gpio-keys=/system/usr/keychars/gpio-keys.kcm
 wifi.interface=wlan0
 ro.sf.lcd_density=140
 keyguard.no_require_sim=1
+
+# Give me a root shell and adb debugging
+ro.secure=0
+ro.debuggable=1
+persist.service.adb.enable=1

@@ -39,7 +39,7 @@ $(call inherit-product-if-exists, device/apple/common/common.mk)
 
 # apns config file
 PRODUCT_COPY_FILES += \
-        vendor/cyanogen/prebuilt/common/etc/apns-conf.xml:system/etc/apns-conf.xml
+        device/apple/ipt1G/prebuilt/apns-conf.xml:system/etc/apns-conf.xml
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
@@ -70,7 +70,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
        wifi.supplicant_scan_interval=20 \
        ro.telephony.ril_class=apple \
        ro.telephony.sends_barcount=1 \
-       mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
+       mobiledata.interfaces=/dev/omap_csmi_tty1,pdp0,eth0,gprs,ppp0 \
        dalvik.vm.heapsize=64m \
        persist.service.usb.setting=0 \
        dev.sfbootcomplete=0
@@ -105,10 +105,9 @@ PRODUCT_LOCALES := hdpi
 # kernel modules for ramdisk
 PRODUCT_COPY_FILES += \
 #FIXME
-#	device/apple/ipt1G/prebuilt/sd8686.bin:system/etc/firmware/sd8686.bin \
-#	device/apple/ipt1G/prebuilt/sd8686_helper.bin:system/etc/firmware/sd8686_helper.bin \
-#	device/apple/ipt1G/prebuilt/zephyr2.bin:system/etc/firmware/zephyr2.bin \
-#	device/apple/ipt1G/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	device/apple/ipt1G/prebuilt/sd8686.bin:system/etc/firmware/sd8686.bin \
+	device/apple/ipt1G/prebuilt/sd8686_helper.bin:system/etc/firmware/sd8686_helper.bin \
+	device/apple/ipt1G/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
 	device/apple/ipt1G/prebuilt/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
 	device/apple/ipt1G/prebuilt/init.rc:root/init.rc \
 	device/apple/ipt1G/prebuilt/initDroid.sh:root/initDroid.sh
@@ -118,7 +117,7 @@ PRODUCT_COPY_FILES += \
 #    device/apple/ipt1G/j4fs.ko:recovery/root/lib/modules/j4fs.ko
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
-    LOCAL_KERNEL := device/apple/ipt1G/kernel
+    LOCAL_KERNEL := device/apple/ipt1G/prebuilt/kernel
 else
     LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
