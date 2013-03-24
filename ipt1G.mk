@@ -104,7 +104,6 @@ PRODUCT_LOCALES := hdpi
 
 # kernel modules for ramdisk
 PRODUCT_COPY_FILES += \
-#FIXME
 	device/apple/ipt1G/prebuilt/sd8686.bin:system/etc/firmware/sd8686.bin \
 	device/apple/ipt1G/prebuilt/sd8686_helper.bin:system/etc/firmware/sd8686_helper.bin \
 	device/apple/ipt1G/prebuilt/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
